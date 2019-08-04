@@ -45,13 +45,14 @@ public class FirebaseUtil {
                 public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                     if(firebaseAuth.getCurrentUser() == null){
                         FirebaseUtil.signIn();
-                    }else{
+                    }
+                    else{
                         String userId = firebaseAuth.getUid();
                         checkAdmin(userId);
                     }
 
-                    Toast.makeText(callerActivity.getBaseContext(),"Welcome Back!", Toast.LENGTH_LONG).show();
 //                    FirebaseUtil.signIn();
+                    Toast.makeText(callerActivity.getBaseContext(),"Welcome Back!", Toast.LENGTH_LONG).show();
 //                    Toast.makeText(callerActivity.getBaseContext(), "Welcome Back!", Toast.LENGTH_LONG).show();
                 }
             };
